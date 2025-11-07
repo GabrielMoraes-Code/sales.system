@@ -1,0 +1,105 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// Modelo de Usuário (para autenticação)
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String
+  role      Role     @default(VENDEDOR)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+// Enum para perfis de usuário
+enum Role {
+  ADMIN
+  VENDEDOR
+  CAIXA
+}
+
+// Modelo de Produto
+model Product {
+  id        Int      @id @default(autoincrement())
+  name      String
+  sku       String   @unique
+  price     Decimal  @db.Decimal(10, 2)
+  stock     Int
+  minStock  Int
+  category  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relacionamento com itens de venda
+  saleItems SaleItem[]
+
+  @@map("products")
+}
+
+// Modelo de Cliente
+model Client {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  phone     String
+  cpf       String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relacionamento com vendas
+  sales     Sale[]
+
+  @@map("clients")
+}
+
+// Modelo de Venda
+model Sale {
+  id            Int      @id @default(autoincrement())
+  date          DateTime @default(now())
+  subtotal      Decimal  @db.Decimal(10, 2)
+  discount      Decimal  @db.Decimal(10, 2) @default(0)
+  total         Decimal  @db.Decimal(10, 2)
+  paymentMethod String
+  status        String   @default("completed")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relacionamento com cliente (opcional)
+  clientId      Int?
+  client        Client?  @relation(fields: [clientId], references: [id])
+
+  // Relacionamento com itens de venda
+  items         SaleItem[]
+
+  @@map("sales")
+}
+
+// Modelo de Item de Venda (tabela intermediária)
+model SaleItem {
+  id        Int     @id @default(autoincrement())
+  quantity  Int
+  price     Decimal @db.Decimal(10, 2)
+
+  // Relacionamento com venda
+  saleId    Int
+  sale      Sale    @relation(fields: [saleId], references: [id], onDelete: Cascade)
+
+  // Relacionamento com produto
+  productId Int
+  product   Product @relation(fields: [productId], references: [id])
+
+  @@map("sale_items")
+}
+

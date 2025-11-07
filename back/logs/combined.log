@@ -1,0 +1,27 @@
+{"level":"info","message":"Conexão com o banco de dados estabelecida com sucesso","timestamp":"2025-10-30 03:46:51"}
+{"level":"info","message":"Servidor rodando na porta 3000","timestamp":"2025-10-30 03:46:51"}
+{"level":"info","message":"Documentação Swagger disponível em http://localhost:3000/api-docs","timestamp":"2025-10-30 03:46:51"}
+{"level":"info","message":"Ambiente: development","timestamp":"2025-10-30 03:46:51"}
+{"body":{},"level":"info","message":"GET /api-docs","query":{},"timestamp":"2025-10-30 03:47:09"}
+{"body":{},"level":"info","message":"GET /api-docs/","query":{},"timestamp":"2025-10-30 03:47:09"}
+{"body":{},"level":"info","message":"GET /api-docs/swagger-ui.css","query":{},"timestamp":"2025-10-30 03:47:09"}
+{"body":{},"level":"info","message":"GET /api-docs/swagger-ui-bundle.js","query":{},"timestamp":"2025-10-30 03:47:09"}
+{"body":{},"level":"info","message":"GET /api-docs/swagger-ui-standalone-preset.js","query":{},"timestamp":"2025-10-30 03:47:09"}
+{"body":{},"level":"info","message":"GET /api-docs/swagger-ui-init.js","query":{},"timestamp":"2025-10-30 03:47:09"}
+{"body":{},"level":"info","message":"GET /api-docs/favicon-32x32.png","query":{},"timestamp":"2025-10-30 03:47:10"}
+{"body":{},"level":"info","message":"GET /","query":{},"timestamp":"2025-10-30 03:48:09"}
+{"body":{},"level":"info","message":"GET /favicon.ico","query":{},"timestamp":"2025-10-30 03:48:10"}
+{"level":"info","message":"Encerrando servidor...","timestamp":"2025-10-30 03:50:55"}
+{"level":"info","message":"Conexão com o banco de dados estabelecida com sucesso","timestamp":"2025-10-30 03:55:13"}
+{"level":"info","message":"Servidor rodando na porta 3000","timestamp":"2025-10-30 03:55:13"}
+{"level":"info","message":"Documentação Swagger disponível em http://localhost:3000/api-docs","timestamp":"2025-10-30 03:55:13"}
+{"level":"info","message":"Ambiente: development","timestamp":"2025-10-30 03:55:13"}
+{"body":{},"level":"info","message":"GET /api-docs/favicon-32x32.png","query":{},"timestamp":"2025-10-30 15:43:08"}
+{"body":{},"level":"info","message":"GET /api-docs/favicon-32x32.png","query":{},"timestamp":"2025-10-30 16:11:09"}
+{"body":{"clientId":1,"discount":10,"items":[{"productId":2,"quantity":2}],"paymentMethod":"Cartão de Crédito"},"level":"info","message":"POST /api/sales","query":{},"timestamp":"2025-10-30 21:40:35"}
+{"body":{"clientId":1,"discount":10,"items":[{"productId":2,"quantity":2}],"paymentMethod":"PIX"},"level":"info","message":"POST /api/sales","query":{},"timestamp":"2025-10-30 21:40:37"}
+{"body":{"clientId":1,"discount":10,"items":[{"productId":2,"quantity":2}],"paymentMethod":"Cartão de Débito"},"level":"info","message":"POST /api/sales","query":{},"timestamp":"2025-10-30 21:40:39"}
+{"body":{"clientId":1,"discount":10,"items":[{"productId":2,"quantity":2}],"paymentMethod":"Dinheiro"},"level":"info","message":"POST /api/sales","query":{},"timestamp":"2025-10-30 21:40:40"}
+{"body":{"clientId":1,"discount":10,"items":[{"productId":2,"quantity":2}],"paymentMethod":"Dinheiro"},"level":"info","message":"POST /api/sales","query":{},"timestamp":"2025-10-30 21:40:40"}
+{"body":{"clientId":1,"discount":10,"items":[{"productId":2,"quantity":2}],"paymentMethod":"Dinheiro"},"level":"info","message":"POST /api/sales","query":{},"timestamp":"2025-10-30 21:42:37"}
+{"body":{"clientId":null,"discount":0,"items":[{"productId":6,"quantity":2}],"paymentMethod":"PIX"},"level":"info","message":"POST /api/sales","query":{},"timestamp":"2025-10-30 21:52:45"}
